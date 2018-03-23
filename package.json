@@ -1,8 +1,11 @@
 {
-  "name": "interactive-tree",
+  "name": "@worldofcode22/interactive-tree",
   "version": "1.0.0",
   "description": "A NPM module for Linux terminal that will display a file tree like output that will allow navigation between directories and new terminal tabs when pressing enter on a file",
   "main": "index.js",
+  "bin": {
+    "lit": "bin/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
