@@ -10,15 +10,34 @@ commander
 
 commander.parse(process.argv)
 
-let files = fs.readdirSync('.')
-let question = {
-  type: 'list',
-  name: 'tree',
-  message: 'Please Pick A File or Directory To Open',
-  choices: files
+let fileStr = '.'
+
+function getQuestion () {
+  console.log('fileStr is: ' + fileStr)
+  let files = fs.readdirSync(fileStr)
+  let questions = {
+     type: 'list',
+     name: 'tree',
+     message: 'Please Pick A File or Directory To Open',
+     choices: files
+   }
+  return questions
 }
 
-inquirer.prompt([question]).then(
-  answer => { console.log(answers)}
-)
+function res () {
+  inquirer.prompt([getQuestion()]).then(
+    (answer) => {
+      let stat =  fs.statSync(fileStr + `/${answer.tree}`)
+       if(stat.isDirectory()){
+         fileStr += `/${answer.tree}`
+	 res()
+     }
+   },
+    err => { throw new Error(err) }
+  )
+  .catch(
+    err => { console.log(chalk.red(`An Error Occured ${err}`)) }
+  )
+}
 
+res()
