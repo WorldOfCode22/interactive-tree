@@ -1,0 +1,32 @@
+{
+  "name": "interactive-tree",
+  "version": "1.0.0",
+  "description": "A NPM module for Linux terminal that will display a file tree like output that will allow navigation between directories and new terminal tabs when pressing enter on a file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WorldOfCode22/interactive-tree.git"
+  },
+  "keywords": [
+    "single-command",
+    "CLI-command",
+    "tree",
+    "terminal",
+    "interactive"
+  ],
+  "author": "Sloan Gwaltney (worldofcode22@gmail.com)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/WorldOfCode22/interactive-tree/issues"
+  },
+  "homepage": "https://github.com/WorldOfCode22/interactive-tree#readme",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "fs-extra": "^5.0.0",
+    "inquirer": "^5.1.0"
+  }
+}
